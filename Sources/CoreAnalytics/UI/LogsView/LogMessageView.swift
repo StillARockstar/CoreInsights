@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-
-import SwiftUI
 import CoreInsightsShared
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 7.0, *)
 struct LogMessageView: View {
     let message: LogMessage
 

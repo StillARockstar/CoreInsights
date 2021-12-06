@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 7.0, *)
 struct FilesView: View {
     let provider: FilesViewProvider
 
