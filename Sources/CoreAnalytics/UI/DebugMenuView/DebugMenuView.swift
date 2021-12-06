@@ -15,7 +15,7 @@ struct DebugMenuView: View {
         List {
             NavigationLink(
                 "Logs",
-                destination: Text("Logs")
+                destination: LogsView(provider: LogsViewProvider())
             )
             NavigationLink(
                 "Files",
