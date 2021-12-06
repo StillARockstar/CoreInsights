@@ -19,6 +19,7 @@ public class CoreAnalytics {
     }
     private static var config: Configuration?
     public static var logs: Logs!
+    public static var files: Files!
 
     public static func configureInsights() {
         if config != nil {
@@ -28,6 +29,11 @@ public class CoreAnalytics {
         Self.logs = Logs(
             config: Configuration(
                 rootURL: Self.config!.rootURL.appendingPathComponent("Logs")
+            )
+        )
+        Self.files = Files(
+            config: Configuration(
+                rootURL: Self.config!.rootURL.appendingPathComponent("Files")
             )
         )
     }
