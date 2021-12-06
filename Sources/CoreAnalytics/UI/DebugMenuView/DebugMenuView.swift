@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, watchOS 7.0, *)
 public struct DebugMenuView: View {
     @ObservedObject var provider: DebugMenuViewProvider
     @State private var showingResetAlert = false
@@ -47,7 +48,7 @@ public struct DebugMenuView: View {
     }
 }
 
-#if DEBUG
+@available(iOS 14.0, watchOS 7.0, *)
 struct DebugMenuView_Previews: PreviewProvider {
     static var previews: some View {
         DebugMenuView(
@@ -55,4 +56,3 @@ struct DebugMenuView_Previews: PreviewProvider {
         )
     }
 }
-#endif

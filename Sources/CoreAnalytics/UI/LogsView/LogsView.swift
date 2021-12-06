@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreInsightsShared
 
+@available(iOS 14.0, watchOS 7.0, *)
 struct LogsView: View {
     @ObservedObject var provider: LogsViewProvider
 
@@ -45,6 +46,7 @@ struct LogsView: View {
     }
 }
 
+@available(iOS 14.0, watchOS 7.0, *)
 struct LogMessageListView: View {
     let message: LogMessage
 
@@ -68,11 +70,9 @@ struct LogMessageListView: View {
     }
 }
 
-#if DEBUG
+@available(iOS 14.0, watchOS 7.0, *)
 struct LogsView_Previews: PreviewProvider {
     static var previews: some View {
         LogsView(provider: LogsViewProvider())
     }
 }
-#endif
-

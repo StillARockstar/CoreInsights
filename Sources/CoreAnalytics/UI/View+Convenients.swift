@@ -47,6 +47,7 @@ extension LogMessage {
     }
 }
 
+@available(iOS 14.0, watchOS 7.0, *)
 extension View {
 
     func embedInNavigation() -> NavigationView<Self> {

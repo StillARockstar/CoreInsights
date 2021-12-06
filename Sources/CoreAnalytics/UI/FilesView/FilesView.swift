@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, watchOS 7.0, *)
 struct FilesView: View {
     let provider: FilesViewProvider
 
@@ -26,6 +27,7 @@ struct FilesView: View {
     }
 }
 
+@available(iOS 14.0, watchOS 7.0, *)
 struct FilesView_Previews: PreviewProvider {
     static var previews: some View {
         FilesView(

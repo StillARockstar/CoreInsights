@@ -8,6 +8,7 @@
 import Combine
 import CoreInsightsShared
 
+@available(iOS 14.0, watchOS 7.0, *)
 class LogsViewProvider: ObservableObject {
     private var numberOfLogBatches = 0
     private var currentLoadedLogBatches = 0
