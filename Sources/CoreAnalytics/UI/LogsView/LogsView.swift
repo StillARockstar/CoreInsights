@@ -51,7 +51,7 @@ struct LogMessageListView: View {
     var body: some View {
         NavigationLink(
             destination: {
-                Text("")
+                LogMessageView(message: message)
             },
             label: {
                 VStack(alignment: .leading) {
