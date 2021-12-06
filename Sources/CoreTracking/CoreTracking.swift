@@ -25,11 +25,18 @@ public class CoreTracking {
         }
     }
     private static var config: Configuration?
+    public static var logs: Logs!
 
     public static func configureInsights(_ outputs: Set<TrackingOutput>) {
         if config != nil {
             fatalError("CoreInsights was already configured")
         }
         Self.config = Configuration(outputs: outputs)
+        Self.logs = Logs(
+            config: Configuration(
+                outputs: outputs,
+                rootURL: Self.config!.rootURL.appendingPathComponent("Logs")
+            )
+        )
     }
 }
