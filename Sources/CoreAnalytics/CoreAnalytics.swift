@@ -18,11 +18,17 @@ public class CoreAnalytics {
         }
     }
     private static var config: Configuration?
+    public static var logs: Logs!
 
     public static func configureInsights() {
         if config != nil {
             fatalError("CoreAnalytics was already configured")
         }
         Self.config = Configuration()
+        Self.logs = Logs(
+            config: Configuration(
+                rootURL: Self.config!.rootURL.appendingPathComponent("Logs")
+            )
+        )
     }
 }
