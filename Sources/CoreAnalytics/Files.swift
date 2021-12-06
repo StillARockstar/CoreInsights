@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class InsightFiles {
+public class Files {
     let config: CoreAnalytics.Configuration
 
     init(config: CoreAnalytics.Configuration) {
