@@ -10,8 +10,9 @@ import Combine
 import CoreInsightsShared
 import CoreTracking
 
-class DebugMenuViewProvider: ObservableObject {
-    init() {
+public class DebugMenuViewProvider: ObservableObject {
+    
+    public init() {
     }
 
     func resetApp() {

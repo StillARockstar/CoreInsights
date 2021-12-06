@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct DebugMenuView: View {
+public struct DebugMenuView: View {
     @ObservedObject var provider: DebugMenuViewProvider
     @State private var showingResetAlert = false
 
-    var body: some View {
+    public init(provider: DebugMenuViewProvider) {
+        self.provider = provider
+    }
+
+    public var body: some View {
         List {
             NavigationLink(
                 "Logs",
