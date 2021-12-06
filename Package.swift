@@ -7,14 +7,26 @@ let package = Package(
     name: "CoreInsights",
     products: [
         .library(
-            name: "CoreInsights",
-            targets: ["CoreInsights"]),
+            name: "CoreTracking",
+            targets: ["CoreTracking"]),
+        .library(
+            name: "CoreAnalytics",
+            targets: ["CoreAnalytics"])
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "CoreInsights",
-            dependencies: []),
+            name: "CoreTracking",
+            dependencies: ["CoreInsightsShared"],
+            path: "Sources/CoreTracking"),
+        .target(
+            name: "CoreAnalytics",
+            dependencies: ["CoreInsightsShared"],
+            path: "Sources/CoreAnalytics"),
+        .target(
+            name: "CoreInsightsShared",
+            dependencies: [],
+            path: "Sources/Shared")
     ]
 )
