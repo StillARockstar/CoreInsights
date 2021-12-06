@@ -8,14 +8,14 @@
 import Foundation
 import CoreInsightsShared
 
-public extension Array where Element == TrackingMessage {
+public extension Array where Element == LogMessage {
     var allTags: [String] {
         let allTags = self.map({ $0.tags }).flatMap({ $0 })
         return allTags.removeDuplicates()
     }
 }
 
-public extension Array where Element == TrackingMessage {
+public extension Array where Element == LogMessage {
     func filterBy(level logLevel: MessageLevel) -> [Element] {
         return self.filterBy(levels: [logLevel])
     }

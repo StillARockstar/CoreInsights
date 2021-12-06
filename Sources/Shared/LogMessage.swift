@@ -15,7 +15,7 @@ public enum MessageLevel: Int {
     case debug = 5000
 }
 
-public struct TrackingMessage {
+public struct LogMessage {
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"

@@ -16,7 +16,7 @@ public class Logs {
     }
 
     public func track(_ text: String, level: MessageLevel = .default, tags: [String] = []) {
-        let trackingMessage = TrackingMessage(date: Date(), level: level, tags: tags, text: text)
+        let trackingMessage = LogMessage(date: Date(), level: level, tags: tags, text: text)
         let messageString = trackingMessage.messageString
         if config.outputs.contains(.console) {
             logToConsole(messageString)

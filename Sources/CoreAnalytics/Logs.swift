@@ -24,7 +24,7 @@ public class Logs {
         return files.count
     }
 
-    public func loadLogBatch(at index: Int) -> [TrackingMessage] {
+    public func loadLogBatch(at index: Int) -> [LogMessage] {
         let fileManager = FileManager.default
         guard let files = try? fileManager.contentsOfDirectory(atPath: config.rootURL.path) else {
             return []
@@ -39,7 +39,7 @@ public class Logs {
             return []
         }
         let messages = Array(linesString.split(separator: "\n").reversed())
-            .map({ TrackingMessage(message: String($0)) })
+            .map({ LogMessage(message: String($0)) })
         return Array(messages)
     }
 }
