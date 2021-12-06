@@ -13,7 +13,7 @@ struct FilesView: View {
     var body: some View {
         List(provider.loadedFileNames, id: \.self, rowContent: { filename in
             NavigationLink(
-                destination: Text(""),
+                destination: FileView(content: provider.content(of: filename)),
                 label: {
                     VStack {
                         Text(filename)
