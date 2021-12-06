@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 7.0, *)
+@available(iOS 14.0, watchOS 7.0, *)
 struct FileView: View {
     let content: String
 
@@ -20,7 +20,7 @@ struct FileView: View {
     }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 7.0, *)
+@available(iOS 14.0, watchOS 7.0, *)
 struct FileView_Previews: PreviewProvider {
     static var previews: some View {
         FileView(content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse est leo, vehicula eu eleifend non, auctor ut arcu")

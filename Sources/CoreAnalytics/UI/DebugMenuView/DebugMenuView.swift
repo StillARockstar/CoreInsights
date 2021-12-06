@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 7.0, *)
+@available(iOS 14.0, watchOS 7.0, *)
 public struct DebugMenuView: View {
     @ObservedObject var provider: DebugMenuViewProvider
     @State private var showingResetAlert = false
