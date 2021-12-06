@@ -8,19 +8,10 @@
 import Foundation
 import Combine
 import CoreInsightsShared
+import CoreTracking
 
 class DebugMenuViewProvider: ObservableObject {
-    @Published var loadedFileNames: [String] = []
-
     init() {
-    }
-
-    func listFiles() {
-        self.loadedFileNames = CoreAnalytics.files.availableFiles()
-    }
-
-    func content(of filename: String) -> String {
-        return CoreAnalytics.files.loadFileContent(name: filename)
     }
 
     func resetApp() {
@@ -37,7 +28,7 @@ class DebugMenuViewProvider: ObservableObject {
             }
             restartApp()
         } catch {
-            print("Failed Resetting App")
+            CoreTracking.logs.track("Failed Resetting App", level: .error)
         }
     }
 
