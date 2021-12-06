@@ -24,7 +24,7 @@ struct LogsView: View {
                 )
                 NavigationLink(
                     destination: {
-                        Text("Levels")
+                        LogsTagsView(provider: provider)
                     },
                     label: {
                         Text("Tags")
