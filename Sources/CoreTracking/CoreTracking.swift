@@ -26,6 +26,7 @@ public class CoreTracking {
     }
     private static var config: Configuration?
     public static var logs: Logs!
+    public static var files: Files!
 
     public static func configureInsights(_ outputs: Set<TrackingOutput>) {
         if config != nil {
@@ -36,6 +37,12 @@ public class CoreTracking {
             config: Configuration(
                 outputs: outputs,
                 rootURL: Self.config!.rootURL.appendingPathComponent("Logs")
+            )
+        )
+        Self.files = Files(
+            config: Configuration(
+                outputs: outputs,
+                rootURL: Self.config?.rootURL.appendingPathComponent("Files")
             )
         )
     }
