@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "CoreInsights",
+    platforms: [
+        .watchOS(.v7)
+    ],
     products: [
         .library(
             name: "CoreTracking",
