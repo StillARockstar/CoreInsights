@@ -29,7 +29,7 @@ public class CoreTracking {
 
     public static func configureInsights(_ outputs: Set<TrackingOutput>) {
         if config != nil {
-            fatalError("CoreInsights was already configured")
+            fatalError("CoreTracking was already configured")
         }
         Self.config = Configuration(outputs: outputs)
         Self.logs = Logs(
