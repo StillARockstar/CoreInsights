@@ -10,6 +10,7 @@ import Combine
 import CoreInsightsShared
 import CoreTracking
 
+@available(iOS 14.0, watchOS 7.0, *)
 public class DebugMenuViewProvider: ObservableObject {
     
     public init() {

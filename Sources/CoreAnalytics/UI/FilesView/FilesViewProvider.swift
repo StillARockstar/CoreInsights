@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@available(iOS 14.0, watchOS 7.0, *)
 class FilesViewProvider: ObservableObject {
     @Published var loadedFileNames: [String] = []
 
