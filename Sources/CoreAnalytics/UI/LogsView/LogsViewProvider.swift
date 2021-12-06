@@ -45,4 +45,40 @@ class LogsViewProvider: ObservableObject {
         currentLoadedLogBatches += 1
         moreLogBatchesAvailabe = currentLoadedLogBatches < numberOfLogBatches
     }
+
+    func availableLogLevels() -> [MessageLevel] {
+        return [.default, .error, .warning, .info, .debug]
+    }
+
+    func toggleLogFilter(_ level: MessageLevel) {
+        if !shownLevels.contains(level) {
+            shownLevels.append(level)
+        } else {
+            shownLevels.removeAll(where: { $0 == level })
+        }
+        filteredLogMessages = loadedLogMessages
+            .filterBy(levels: shownLevels)
+            .filterBy(tags: shownTags)
+    }
+
+    func availableTags() -> [String] {
+        loadedLogMessages.allTags
+    }
+
+    func toggleTagFilter(_ tag: String) {
+        var shownTags = shownTags ?? []
+        if !shownTags.contains(tag) {
+            shownTags.append(tag)
+        } else {
+            shownTags.removeAll(where: { $0 == tag })
+        }
+        if shownTags.count == 0 {
+            self.shownTags = nil
+        } else {
+            self.shownTags = shownTags
+        }
+        filteredLogMessages = loadedLogMessages
+            .filterBy(levels: shownLevels)
+            .filterBy(tags: self.shownTags)
+    }
 }

@@ -16,7 +16,7 @@ struct LogsView: View {
             HStack {
                 NavigationLink(
                     destination: {
-                        Text("Levels")
+                        LogsLevelsView(provider: provider)
                     },
                     label: {
                         Text("Levels")
